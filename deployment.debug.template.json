@@ -64,7 +64,14 @@
             "restartPolicy": "always",
             "settings": {
               "image": "${MODULES.IO.debug}",
-              "createOptions": {}
+              "createOptions": {
+                "Privileged": true,
+                "HostConfig": {
+                  "Binds": [
+                    "/sys:/sys"
+                  ]
+                }
+              }
             }
           }
         }
